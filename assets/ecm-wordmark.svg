@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 510" role="img" aria-labelledby="title desc">
+  <title id="title">Elm City Motion</title>
+  <desc id="desc">Custom geometric wordmark for Elm City Motion</desc>
+  <g fill="none" stroke="#f7f5ef" stroke-linecap="square" stroke-linejoin="miter">
+    <g stroke-width="25">
+      <path d="M12 18V205M12 18H112M12 111H94M12 205H112"/>
+      <path d="M148 18V205H255"/>
+      <path d="M291 205V18L356 129 421 18V205"/>
+      <path d="M580 18H489V205H580"/>
+      <path d="M621 18V205"/>
+      <path d="M673 18H799M736 18V205"/>
+      <path d="M830 18L895 116 960 18M895 116V205"/>
+    </g>
+    <g stroke-width="34">
+      <path d="M22 483V266L105 401 188 266V483"/>
+      <path d="M232 266H355V483H232Z"/>
+      <path d="M400 266H544M472 266V483"/>
+      <path d="M590 266V483"/>
+      <path d="M648 266H771V483H648Z"/>
+      <path d="M816 483V266L972 483V266"/>
+    </g>
+  </g>
+</svg>

@@ -15,8 +15,8 @@ nav a:hover, .project a:hover, .contact a:hover { text-decoration:underline; tex
 .motion-ready [data-fade] { opacity:0; }
 .hero-meta { margin:0; align-self:start; }
 h1,h2,h3 { font-family:Oswald, Impact, sans-serif; font-weight:600; line-height:.8; letter-spacing:-.055em; margin:0; }
-h1 { align-self:center; max-width:1100px; font-size:clamp(92px, 17vw, 270px); }
-h1 span { margin-left:12vw; }
+.wordmark { align-self:center; width:min(69vw, 1040px); }
+.wordmark img { display:block; width:100%; height:auto; }
 .hero-bottom { display:flex; align-items:end; justify-content:space-between; gap:20px; }
 .hero-bottom p { margin:0; max-width:250px; }
 .eyebrow { color:var(--muted); margin:0; }
@@ -36,4 +36,4 @@ footer p { margin:0; } footer span, footer a:hover { color:var(--ink); }
 .legal-copy { max-width:570px; margin-left:33.333%; font-size:clamp(16px,1.5vw,22px); line-height:1.14; letter-spacing:-.055em; text-transform:none; }
 .legal-copy p { margin:0 0 1.15em; }
 .legal-copy a { text-decoration:underline; text-underline-offset:4px; }
-@media (max-width:700px) { .site-header { padding:17px; } nav { gap:13px; font-size:9px; }.hero { min-height:100svh; padding:76px 17px 17px; }.hero-image { background-position:62% center; }.hero-meta { font-size:9px; }.hero h1 { font-size:clamp(83px,25vw,110px); letter-spacing:-.07em; line-height:.82; }.hero h1 span { margin-left:7vw; }.hero-bottom { font-size:8px; line-height:1.5; }.hero-bottom p:first-child { max-width:220px; }.statement,.contact { grid-template-columns:1fr; gap:44px; padding:17px; }.statement { min-height:61vh; }.statement div { font-size:clamp(21px,6.4vw,29px); }.contact { min-height:78vh; }.contact h2 { align-self:start; font-size:clamp(83px,21vw,96px); }.contact-details { grid-template-columns:1fr; gap:17px; }.contact-details a { font-size:12px; } footer { grid-template-columns:1fr 1fr; padding:17px; gap:20px; }.legal-page { padding:70px 17px 55px; }.legal-page h1 { margin:42px 0 65px; }.legal-copy { margin-left:0; } }
+@media (max-width:700px) { .site-header { padding:17px; } nav { gap:13px; font-size:9px; }.hero { min-height:100svh; padding:76px 17px 17px; }.hero-image { background-position:62% center; }.hero-meta { font-size:9px; }.wordmark { width:min(92vw,400px); }.hero-bottom { font-size:8px; line-height:1.5; }.hero-bottom p:first-child { max-width:220px; }.statement,.contact { grid-template-columns:1fr; gap:44px; padding:17px; }.statement { min-height:61vh; }.statement div { font-size:clamp(21px,6.4vw,29px); }.contact { min-height:78vh; }.contact h2 { align-self:start; font-size:clamp(83px,21vw,96px); }.contact-details { grid-template-columns:1fr; gap:17px; }.contact-details a { font-size:12px; } footer { grid-template-columns:1fr 1fr; padding:17px; gap:20px; }.legal-page { padding:70px 17px 55px; }.legal-page h1 { margin:42px 0 65px; }.legal-copy { margin-left:0; } }
