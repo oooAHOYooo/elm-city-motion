@@ -16,4 +16,4 @@ The page copy is in `index.html`. The current generated cinematic still is at `a
 
 ## Wordmarks
 
-`assets/ecm-wordmark.svg` is the white hero version. `assets/ecm-wordmark-print.svg` is the one-color black version for print, festival laurels, and credits.
+`assets/ecm-wordmark.svg` is the white hero version, with a subtle motion exposure behind the second line. `assets/ecm-wordmark-print.svg` is the crisp one-color black version for print, festival laurels, and credits.

@@ -1,27 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 510" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 490" role="img" aria-labelledby="title desc">
   <title id="title">Elm City Motion</title>
   <desc id="desc">One-color print wordmark for Elm City Motion</desc>
-  <g fill="none" stroke="#111111" stroke-linecap="square" stroke-linejoin="miter">
-    <g stroke-width="13">
-      <path d="M0 72H58M18 111H58M0 150H58"/>
-      <path d="M0 319H66M19 373H66M0 427H66"/>
-    </g>
-    <g transform="translate(86 0)" stroke-width="25">
-      <path d="M12 18V205M12 18H112M12 111H94M12 205H112"/>
-      <path d="M148 18V205H255"/>
-      <path d="M291 205V18L356 129 421 18V205"/>
-      <path d="M580 18H489V205H580"/>
-      <path d="M621 18V205"/>
-      <path d="M673 18H799M736 18V205"/>
-      <path d="M830 18L895 116 960 18M895 116V205"/>
-    </g>
-    <g transform="translate(86 0)" stroke-width="34">
-      <path d="M22 483V266L105 401 188 266V483"/>
-      <path d="M232 266H355V483H232Z"/>
-      <path d="M400 266H544M472 266V483"/>
-      <path d="M590 266V483"/>
-      <path d="M648 266H771V483H648Z"/>
-      <path d="M816 483V266L972 483V266"/>
-    </g>
+  <g font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-stretch="condensed" fill="#111111">
+    <text x="0" y="178" font-size="180" font-weight="500" letter-spacing="-12">ELM CITY</text>
+    <text x="0" y="415" font-size="218" font-weight="700" letter-spacing="-15">MOTION</text>
   </g>
 </svg>
