@@ -1,8 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 510" role="img" aria-labelledby="title desc">
   <title id="title">Elm City Motion</title>
-  <desc id="desc">Custom geometric wordmark for Elm City Motion</desc>
-  <g fill="none" stroke="#f7f5ef" stroke-linecap="square" stroke-linejoin="miter">
-    <!-- Kinetic lead-in: a one-color motion cue that survives small print sizes. -->
+  <desc id="desc">One-color print wordmark for Elm City Motion</desc>
+  <g fill="none" stroke="#111111" stroke-linecap="square" stroke-linejoin="miter">
     <g stroke-width="13">
       <path d="M0 72H58M18 111H58M0 150H58"/>
       <path d="M0 319H66M19 373H66M0 427H66"/>

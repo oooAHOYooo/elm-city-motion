@@ -13,3 +13,7 @@ Then visit `http://127.0.0.1:4173`.
 ## Updating the placeholder
 
 The page copy is in `index.html`. The current generated cinematic still is at `assets/ecm-hero.png`; replace it with production photography when it is available.
+
+## Wordmarks
+
+`assets/ecm-wordmark.svg` is the white hero version. `assets/ecm-wordmark-print.svg` is the one-color black version for print, festival laurels, and credits.

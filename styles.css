@@ -17,6 +17,7 @@ nav a:hover, .project a:hover, .contact a:hover { text-decoration:underline; tex
 h1,h2,h3 { font-family:Oswald, Impact, sans-serif; font-weight:600; line-height:.8; letter-spacing:-.055em; margin:0; }
 .wordmark { align-self:center; width:min(69vw, 1040px); }
 .wordmark img { display:block; width:100%; height:auto; }
+@media print { .hero { color:#111; background:#fff; min-height:auto; } .hero-image,.site-header,.hero-meta,.hero-bottom { display:none; } .wordmark img { filter:invert(1); } }
 .hero-bottom { display:flex; align-items:end; justify-content:space-between; gap:20px; }
 .hero-bottom p { margin:0; max-width:250px; }
 .eyebrow { color:var(--muted); margin:0; }
