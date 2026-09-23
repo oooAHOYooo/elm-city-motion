@@ -1,14 +1,14 @@
 (() => {
-  // Background switcher logic
-  const heroBgs = [...document.querySelectorAll('.hero-bg')];
-  const locPills = [...document.querySelectorAll('.loc-pill')];
-  const locIndicator = document.getElementById('hero-loc-tag');
-  let currentIndex = 0;
-  let cycleTimer = null;
+  // Stills / Hero Background switcher logic
+  const stillsBgs = [...document.querySelectorAll('.stills-bg, .hero-bg')];
+  const stillsPills = [...document.querySelectorAll('.stills-pill, .loc-pill')];
+  const stillsLocIndicator = document.getElementById('stills-loc-indicator') || document.getElementById('hero-loc-tag');
+  let currentStillsIndex = 0;
+  let stillsTimer = null;
 
-  const setHeroBackground = (index) => {
-    if (!heroBgs[index]) return;
-    heroBgs.forEach((bg, i) => {
+  const setStillsBackground = (index) => {
+    if (!stillsBgs[index]) return;
+    stillsBgs.forEach((bg, i) => {
       const vid = bg.querySelector('video');
       if (i === index) {
         bg.classList.add('is-active');
@@ -19,37 +19,37 @@
       }
     });
 
-    locPills.forEach((pill, i) => {
+    stillsPills.forEach((pill, i) => {
       pill.classList.toggle('is-active', i === index);
     });
 
-    if (locIndicator && heroBgs[index].dataset.label) {
-      locIndicator.style.opacity = '0';
+    if (stillsLocIndicator && stillsBgs[index].dataset.label) {
+      stillsLocIndicator.style.opacity = '0';
       setTimeout(() => {
-        locIndicator.textContent = 'LOC: ' + heroBgs[index].dataset.label;
-        locIndicator.style.opacity = '1';
+        stillsLocIndicator.textContent = 'LOC: ' + stillsBgs[index].dataset.label;
+        stillsLocIndicator.style.opacity = '1';
       }, 200);
     }
-    currentIndex = index;
+    currentStillsIndex = index;
   };
 
-  locPills.forEach((pill) => {
+  stillsPills.forEach((pill) => {
     pill.addEventListener('click', () => {
       const idx = parseInt(pill.dataset.index, 10);
-      setHeroBackground(idx);
-      clearInterval(cycleTimer);
-      // Resume slow rotation after 18 seconds of inactivity
-      cycleTimer = setInterval(autoRotate, 9000);
+      setStillsBackground(idx);
+      clearInterval(stillsTimer);
+      stillsTimer = setInterval(autoRotateStills, 9000);
     });
   });
 
-  const autoRotate = () => {
-    const nextIdx = (currentIndex + 1) % heroBgs.length;
-    setHeroBackground(nextIdx);
+  const autoRotateStills = () => {
+    if (stillsBgs.length <= 1) return;
+    const nextIdx = (currentStillsIndex + 1) % stillsBgs.length;
+    setStillsBackground(nextIdx);
   };
 
-  if (heroBgs.length > 1) {
-    cycleTimer = setInterval(autoRotate, 8000);
+  if (stillsBgs.length > 1) {
+    stillsTimer = setInterval(autoRotateStills, 8000);
   }
 
   // Contact section photo rotation (like hero)
