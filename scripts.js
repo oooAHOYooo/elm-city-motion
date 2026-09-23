@@ -9,10 +9,13 @@
   const setHeroBackground = (index) => {
     if (!heroBgs[index]) return;
     heroBgs.forEach((bg, i) => {
+      const vid = bg.querySelector('video');
       if (i === index) {
         bg.classList.add('is-active');
+        if (vid) vid.play().catch(() => {});
       } else {
         bg.classList.remove('is-active');
+        if (vid) vid.pause();
       }
     });
 

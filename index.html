@@ -21,8 +21,15 @@
 
     <main id="top">
       <section class="hero" aria-labelledby="site-title">
-        <div class="hero-image" role="img" aria-label="Cinematic New Haven film stills">
-          <div class="hero-bg is-active" style="background-image: linear-gradient(90deg, rgba(6,10,11,.76) 0%, rgba(6,10,11,.32) 57%, rgba(6,10,11,.15)), url('assets/nh-koffee-counter.jpg');" data-label="Audubon St — Koffee? Counter &amp; Barista Motion"></div>
+        <div class="hero-image" role="img" aria-label="Cinematic New Haven film stills and motion reel">
+          <div class="hero-bg hero-video-bg is-active" data-label="Audubon St — Sesabee Chai Film Reel (Live 4K/HD Video)">
+            <video class="hero-video-element" autoplay muted loop playsinline poster="assets/nh-koffee-espresso.jpg">
+              <source src="assets/sesabee-chai.mp4" type="video/mp4" />
+            </video>
+            <div class="hero-video-overlay"></div>
+          </div>
+          <div class="hero-bg" style="background-image: linear-gradient(90deg, rgba(6,10,11,.76) 0%, rgba(6,10,11,.32) 57%, rgba(6,10,11,.15)), url('assets/sesabee-chai.gif');" data-label="Audubon St — Sesabee Chai Steaming Wand (Motion GIF)"></div>
+          <div class="hero-bg" style="background-image: linear-gradient(90deg, rgba(6,10,11,.76) 0%, rgba(6,10,11,.32) 57%, rgba(6,10,11,.15)), url('assets/nh-koffee-counter.jpg');" data-label="Audubon St — Koffee? Counter &amp; Barista Motion"></div>
           <div class="hero-bg" style="background-image: linear-gradient(90deg, rgba(6,10,11,.76) 0%, rgba(6,10,11,.32) 57%, rgba(6,10,11,.15)), url('assets/nh-koffee-interior.jpg');" data-label="Audubon St — Koffee? Interior &amp; Chandelier"></div>
           <div class="hero-bg" style="background-image: linear-gradient(90deg, rgba(6,10,11,.76) 0%, rgba(6,10,11,.32) 57%, rgba(6,10,11,.15)), url('assets/nh-koffee-espresso.jpg');" data-label="Audubon St — Koffee? Espresso Bar &amp; Brick Clock"></div>
           <div class="hero-bg" style="background-image: linear-gradient(90deg, rgba(6,10,11,.76) 0%, rgba(6,10,11,.32) 57%, rgba(6,10,11,.15)), url('assets/nh-koffee-cup.jpg');" data-label="Audubon St — Ceramic Cup &amp; Saucer Still"></div>
@@ -30,19 +37,21 @@
         </div>
         <div class="hero-top-bar">
           <p class="hero-meta hero-meta--top">Film + Video<br />New Haven, CT</p>
-          <div class="hero-loc-indicator" id="hero-loc-tag">LOC: Audubon St — Koffee? Counter &amp; Barista Motion</div>
+          <div class="hero-loc-indicator" id="hero-loc-tag">LOC: Audubon St — Sesabee Chai Film Reel (Live Video)</div>
         </div>
         <h1 id="site-title" class="wordmark"><img src="assets/ecm-wordmark.svg" alt="Elm City Motion" /></h1>
         <div class="hero-bottom">
           <p>Commercial / Narrative / Documentary / Music / Camera</p>
-          <div class="hero-bg-selector" aria-label="Select New Haven background photo">
+          <div class="hero-bg-selector" aria-label="Select New Haven background photo or video">
             <span class="bg-selector-label">Background:</span>
             <div class="bg-selector-pills">
-              <button type="button" class="loc-pill is-active" data-index="0">01 Counter</button>
-              <button type="button" class="loc-pill" data-index="1">02 Interior</button>
-              <button type="button" class="loc-pill" data-index="2">03 Espresso</button>
-              <button type="button" class="loc-pill" data-index="3">04 Cup</button>
-              <button type="button" class="loc-pill" data-index="4">05 Detail</button>
+              <button type="button" class="loc-pill is-active" data-index="0">▶ Video</button>
+              <button type="button" class="loc-pill" data-index="1">GIF</button>
+              <button type="button" class="loc-pill" data-index="2">Counter</button>
+              <button type="button" class="loc-pill" data-index="3">Interior</button>
+              <button type="button" class="loc-pill" data-index="4">Espresso</button>
+              <button type="button" class="loc-pill" data-index="5">Cup</button>
+              <button type="button" class="loc-pill" data-index="6">Detail</button>
             </div>
           </div>
           <p>ECM / 2026</p>

@@ -10,9 +10,11 @@ python3 -m http.server 4173
 
 Then visit `http://127.0.0.1:4173`.
 
-## Photography Assets
+## Motion & Photography Assets
 
-Production and location photography for New Haven backgrounds are stored in `assets/`:
+Production and location assets for New Haven backgrounds are stored in `assets/`:
+- `assets/sesabee-chai.mp4`: Silent looping H.264 video reel from Koffee? Audubon St shoot (DaVinci Resolve export)
+- `assets/sesabee-chai.gif`: Optimized custom-palette 12fps looping web GIF of steaming espresso & drink prep
 - `assets/nh-koffee-counter.jpg`: Koffee? on Audubon St — Barista motion blur & pastry counter
 - `assets/nh-koffee-interior.jpg`: Koffee? on Audubon St — Interior wide shot, chandelier & brick arches
 - `assets/nh-koffee-espresso.jpg`: Koffee? on Audubon St — Espresso bar, brick wall & clock
