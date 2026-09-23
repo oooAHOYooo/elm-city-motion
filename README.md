@@ -13,8 +13,8 @@ Then visit `http://127.0.0.1:4173`.
 ## Motion & Photography Assets
 
 Production and location assets for New Haven backgrounds are stored in `assets/`:
-- `assets/sesabee-chai.mp4`: Silent looping H.264 video reel from Koffee? Audubon St shoot (DaVinci Resolve export)
-- `assets/sesabee-chai.gif`: Optimized custom-palette 12fps looping web GIF of steaming espresso & drink prep
+- `assets/nh-koffee-motion.mp4`: Lightweight (237 KB) black-and-white silent looping background video of espresso steam & motion (DaVinci Resolve client shoot)
+- `assets/nh-koffee-motion.gif`: Lightweight (1 MB) black-and-white 10fps looping web GIF fallback
 - `assets/nh-koffee-counter.jpg`: Koffee? on Audubon St — Barista motion blur & pastry counter
 - `assets/nh-koffee-interior.jpg`: Koffee? on Audubon St — Interior wide shot, chandelier & brick arches
 - `assets/nh-koffee-espresso.jpg`: Koffee? on Audubon St — Espresso bar, brick wall & clock
