@@ -15,6 +15,7 @@ Then visit `http://127.0.0.1:4173`.
 Production and location assets for New Haven backgrounds are stored in `assets/`:
 - `assets/nh-koffee-motion.mp4`: Lightweight (237 KB) black-and-white silent looping background video of espresso steam & motion (DaVinci Resolve client shoot)
 - `assets/nh-koffee-motion.gif`: Lightweight (1 MB) black-and-white 10fps looping web GIF fallback
+- `assets/nh-bts-camera.jpg`: Production set — Cinema camera rig on tripod & directing in dramatic chiaroscuro
 - `assets/nh-koffee-counter.jpg`: Koffee? on Audubon St — Barista motion blur & pastry counter
 - `assets/nh-koffee-interior.jpg`: Koffee? on Audubon St — Interior wide shot, chandelier & brick arches
 - `assets/nh-koffee-espresso.jpg`: Koffee? on Audubon St — Espresso bar, brick wall & clock

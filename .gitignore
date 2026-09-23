@@ -1,0 +1,13 @@
+# Operating System
+.DS_Store
+Thumbs.db
+
+# Heavy video assets (kept local / CDN, not tracked in git)
+assets/reels/*
+!assets/reels/README.md
+assets/*.mov
+assets/*.m4v
+assets/*.webm
+
+# Keep existing repository assets
+!assets/nh-koffee-motion.mp4
