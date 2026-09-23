@@ -13,9 +13,8 @@ Then visit `http://127.0.0.1:4173`.
 ## Motion & Photography Assets
 
 Production and location assets for New Haven backgrounds are stored in `assets/`:
-- `assets/ecm-commercial-reel.mp4`: Ultra-lightweight (182 KB) high-contrast black-and-white silent looping background video powering the bottom contact section (commercial B-roll reel)
-- `assets/ecm-commercial-reel.gif`: Ultra-lightweight (806 KB) black-and-white 10fps looping web GIF fallback
-- `assets/ecm-commercial-reel-poster.jpg`: Clean poster still for the contact video (42 KB)
+- `assets/ecm-commercial-reel.mp4`: Lightweight 21-clip cinematic montage reel (39s, 3.9 MB) with smooth dark crossfades in high-contrast black-and-white powering the dedicated 1200px stretched video section
+- `assets/ecm-commercial-reel-poster.jpg`: Poster frame for video reel (164 KB)
 - `assets/nh-bts-camera.jpg`: Production set — Cinema camera rig on tripod & directing in dramatic chiaroscuro (Hero slide 01)
 - `assets/nh-koffee-counter.jpg`: Koffee? on Audubon St — Barista motion blur & pastry counter (Hero slide 02)
 - `assets/nh-koffee-interior.jpg`: Koffee? on Audubon St — Interior wide shot, chandelier & brick arches (Hero slide 03 & About backdrop)
