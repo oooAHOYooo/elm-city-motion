@@ -52,6 +52,18 @@
     cycleTimer = setInterval(autoRotate, 8000);
   }
 
+  // Contact section photo rotation (like hero)
+  const contactBgs = [...document.querySelectorAll('.contact-bg')];
+  let contactIdx = 0;
+  if (contactBgs.length > 1) {
+    setInterval(() => {
+      contactIdx = (contactIdx + 1) % contactBgs.length;
+      contactBgs.forEach((bg, i) => {
+        bg.classList.toggle('is-active', i === contactIdx);
+      });
+    }, 9500);
+  }
+
   // Animation & Depth logic
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const fadeSections = [...document.querySelectorAll('[data-fade]')];
