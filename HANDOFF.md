@@ -124,12 +124,18 @@ If you need to re-render, re-pace, or add/swap clips in `assets/ecm-commercial-r
 11. `02:48.0 - 02:52.0` (4.0s): Shoreline dancers at twilight
 12. `02:52.0 - 02:56.5` (4.5s): Cowboy walking horse and tipping hat
 
-### Phase 6: Minimalist Pure Stills & Slogan / Copy Refinement (Current State)
+### Phase 6: Minimalist Pure Stills & Slogan / Copy Refinement
 - **User Request:** *"could you get rid of this and just have nothing but the rotating images - and get rid of "make something" and could you write - Elm City Motion makes film and video for clients in New Haven, Connecticut - or what do you think of the slogan ?"*
 - **Implementation:**
   - **Stills Section (`#stills`)**: Removed the `.stills-header` overlay bar (the `02 / STILLS` label, the 6 interactive selector pills, and the location tag indicator). The section now presents a pure, uncluttered, full-bleed rotating photo stills gallery that auto-rotates smoothly every 8 seconds.
   - **Statement Copy (`#about`)**: Updated the statement and meta description to the approved slogan: *"Film and video production for clients in New Haven and beyond."*
   - **Contact Section (`#contact`)**: Replaced the previous `Make Something` headline with a clean, confident `Contact` heading matching the editorial brutalist typography.
+
+### Phase 7: Full-Bleed Statement Background & Compact Centered Contact Section (Current State)
+- **User Request:** *"this section here - could the background image go all the way - and could you for "contact" make that hiehght smaller and have alex@ahoy.ooo in the center?"*
+- **Implementation:**
+  - **Statement Section (`#about`)**: Resolved the Safari/WebKit grid-cell clipping where the background image was constrained to the 1/3 column width. Wrapped content in `.statement-inner` with `display: flex` on `.statement`, allowing `.statement-bg` (`position: absolute; inset: 0`) to stretch 100% full-bleed edge-to-edge behind the entire statement copy.
+  - **Contact Section (`#contact`)**: Reduced section height from `92vh` down to a compact, punchy `44vh` (36vh on mobile). Centered `alex@ahoy.ooo` directly in the section with `DM Mono` styling, active underline, and smooth hover state.
 
 ---
 
