@@ -124,6 +124,13 @@ If you need to re-render, re-pace, or add/swap clips in `assets/ecm-commercial-r
 11. `02:48.0 - 02:52.0` (4.0s): Shoreline dancers at twilight
 12. `02:52.0 - 02:56.5` (4.5s): Cowboy walking horse and tipping hat
 
+### Phase 6: Minimalist Pure Stills & Slogan / Copy Refinement (Current State)
+- **User Request:** *"could you get rid of this and just have nothing but the rotating images - and get rid of "make something" and could you write - Elm City Motion makes film and video for clients in New Haven, Connecticut - or what do you think of the slogan ?"*
+- **Implementation:**
+  - **Stills Section (`#stills`)**: Removed the `.stills-header` overlay bar (the `02 / STILLS` label, the 6 interactive selector pills, and the location tag indicator). The section now presents a pure, uncluttered, full-bleed rotating photo stills gallery that auto-rotates smoothly every 8 seconds.
+  - **Statement Copy (`#about`)**: Updated the statement and meta description to the approved slogan: *"Film and video production for clients in New Haven and beyond."*
+  - **Contact Section (`#contact`)**: Replaced the previous `Make Something` headline with a clean, confident `Contact` heading matching the editorial brutalist typography.
+
 ---
 
 ## 5. Decision Points for Next Agent
