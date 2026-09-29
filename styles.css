@@ -66,4 +66,51 @@ footer p { margin:0; } footer span, footer a:hover { color:var(--ink); }
 .legal-copy { max-width:570px; margin-left:33.333%; font-size:clamp(16px,1.5vw,22px); line-height:1.14; letter-spacing:-.055em; text-transform:none; }
 .legal-copy p { margin:0 0 1.15em; }
 .legal-copy a { text-decoration:underline; text-underline-offset:4px; }
+.reel-page { min-height:100vh; overflow:hidden; background:#080808; color:#fff; }
+.reel-screen { position:relative; isolation:isolate; min-height:100svh; display:flex; flex-direction:column; justify-content:space-between; padding:27px 30px 22px; overflow:hidden; background:#080808; }
+.reel-backdrop { position:absolute; z-index:-2; inset:-5%; width:110%; height:110%; object-fit:cover; filter:grayscale(1) blur(22px) brightness(.28); transform:scale(1.04); }
+.reel-wash { position:absolute; z-index:-1; inset:0; background:radial-gradient(ellipse at center,rgba(0,0,0,.16),rgba(0,0,0,.65)),linear-gradient(180deg,rgba(0,0,0,.28),transparent 24%,transparent 72%,rgba(0,0,0,.42)); }
+.reel-header,.reel-footer { display:flex; align-items:center; justify-content:space-between; position:relative; z-index:2; }
+.reel-back { color:rgba(255,255,255,.74); font-size:10px; letter-spacing:.08em; transition:color .2s ease; }
+.reel-back span { margin-right:9px; font-size:15px; vertical-align:-1px; }
+.reel-back:hover,.reel-footer a:hover { color:#fff; }
+.reel-watermark { font-family:Oswald,Impact,sans-serif; font-size:30px; font-weight:600; letter-spacing:-.07em; line-height:1; text-shadow:0 1px 18px rgba(255,255,255,.2); }
+.reel-watermark span { font:8px "DM Mono",monospace; vertical-align:top; margin-left:3px; letter-spacing:0; }
+.reel-stage { width:min(1100px, 86vw); margin:auto; padding:42px 0; }
+.reel-heading,.reel-caption { display:flex; justify-content:space-between; gap:20px; color:rgba(255,255,255,.66); font-size:9px; letter-spacing:.1em; }
+.reel-heading { margin-bottom:13px; }
+.reel-caption { margin-top:13px; }
+.reel-frame { position:relative; overflow:hidden; background:#101010; box-shadow:0 25px 110px rgba(0,0,0,.65); }
+.reel-feature { display:block; width:100%; height:auto; max-height:70svh; aspect-ratio:1920 / 804; object-fit:contain; background:#050505; filter:grayscale(1) contrast(1.04); cursor:pointer; }
+.reel-frame:fullscreen { display:grid; place-items:center; background:#050505; }
+.reel-frame:fullscreen .reel-feature { width:100%; height:100%; max-height:none; aspect-ratio:auto; object-fit:contain; }
+.reel-center-play { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:66px; height:66px; display:grid; place-items:center; padding:0 0 0 4px; color:#fff; border:1px solid rgba(255,255,255,.6); border-radius:50%; background:rgba(255,255,255,.12); backdrop-filter:blur(14px) saturate(140%); -webkit-backdrop-filter:blur(14px) saturate(140%); box-shadow:inset 0 1px rgba(255,255,255,.18),0 8px 30px rgba(0,0,0,.18); font:17px "DM Mono",monospace; cursor:pointer; transition:opacity .3s ease, background .2s ease, transform .2s ease; }
+.reel-center-play:hover { background:rgba(255,255,255,.22); transform:translate(-50%,-50%) scale(1.05); }
+.reel-center-play:focus-visible,.reel-control-button:focus-visible,.reel-seek:focus-visible { outline:1px solid #fff; outline-offset:3px; }
+.reel-frame.is-playing .reel-center-play { opacity:0; pointer-events:none; }
+.reel-controls { position:absolute; left:14px; right:14px; bottom:13px; display:grid; grid-template-columns:30px minmax(40px,1fr) 30px 30px; align-items:center; gap:10px; min-height:42px; padding:0 11px; color:#fff; border:1px solid rgba(255,255,255,.2); border-radius:7px; background:rgba(20,20,20,.28); backdrop-filter:blur(18px) saturate(135%); -webkit-backdrop-filter:blur(18px) saturate(135%); box-shadow:inset 0 1px rgba(255,255,255,.1),0 5px 22px rgba(0,0,0,.14); opacity:.78; transition:opacity .25s ease, background .25s ease; }
+.reel-frame:hover .reel-controls,.reel-frame:focus-within .reel-controls { opacity:1; background:rgba(20,20,20,.38); }
+.reel-control-button { display:grid; place-items:center; width:28px; height:28px; padding:0; color:rgba(255,255,255,.88); border:0; border-radius:50%; background:transparent; font:12px "DM Mono",monospace; cursor:pointer; transition:color .2s ease,background .2s ease; }
+.reel-control-button:hover { color:#fff; background:rgba(255,255,255,.14); }
+.reel-seek { width:100%; height:24px; margin:0; padding:0 2px; appearance:none; -webkit-appearance:none; background:transparent; cursor:grab; }
+.reel-seek:active { cursor:grabbing; }
+.reel-seek::-webkit-slider-runnable-track { height:3px; border-radius:9px; background:linear-gradient(90deg,#fff 0%,#d8d8d8 var(--progress,0%),rgba(255,255,255,.22) var(--progress,0%),rgba(255,255,255,.22) 100%); box-shadow:0 0 8px rgba(255,255,255,.14); }
+.reel-seek::-moz-range-track { height:3px; border-radius:9px; background:rgba(255,255,255,.22); box-shadow:0 0 8px rgba(255,255,255,.14); }
+.reel-seek::-moz-range-progress { height:3px; border-radius:9px; background:linear-gradient(90deg,#fff,#d8d8d8); box-shadow:0 0 8px rgba(255,255,255,.38); }
+.reel-seek::-webkit-slider-thumb { width:15px; height:15px; margin-top:-6px; appearance:none; -webkit-appearance:none; border:1px solid rgba(255,255,255,.98); border-radius:50%; background:radial-gradient(circle at 34% 28%,#fff 0 24%,rgba(255,255,255,.94) 27% 51%,rgba(255,255,255,.55) 72%); box-shadow:0 0 0 4px rgba(255,255,255,.2),0 0 15px rgba(255,255,255,.88),inset 0 1px 2px rgba(255,255,255,.8); transition:transform .2s cubic-bezier(.2,.8,.2,1),box-shadow .2s ease; }
+.reel-seek::-moz-range-thumb { width:15px; height:15px; border:1px solid rgba(255,255,255,.98); border-radius:50%; background:radial-gradient(circle at 34% 28%,#fff 0 24%,rgba(255,255,255,.94) 27% 51%,rgba(255,255,255,.55) 72%); box-shadow:0 0 0 4px rgba(255,255,255,.2),0 0 15px rgba(255,255,255,.88),inset 0 1px 2px rgba(255,255,255,.8); transition:transform .2s cubic-bezier(.2,.8,.2,1),box-shadow .2s ease; }
+.reel-seek:hover::-webkit-slider-thumb,.reel-seek:focus-visible::-webkit-slider-thumb { transform:scale(1.35); box-shadow:0 0 0 5px rgba(255,255,255,.13),0 0 18px rgba(255,255,255,.7); }
+.reel-seek:hover::-moz-range-thumb,.reel-seek:focus-visible::-moz-range-thumb { transform:scale(1.35); box-shadow:0 0 0 5px rgba(255,255,255,.13),0 0 18px rgba(255,255,255,.7); }
+.reel-footer { color:rgba(255,255,255,.52); font-size:9px; letter-spacing:.08em; }
+.reel-footer a { color:rgba(255,255,255,.82); transition:color .2s ease; }
+@media (max-width:700px) {
+  .reel-screen { padding:18px 17px 17px; }
+  .reel-stage { width:100%; padding:30px 0; }
+  .reel-heading,.reel-caption { font-size:8px; letter-spacing:.06em; }
+  .reel-feature { max-height:62svh; }
+  .reel-watermark { font-size:27px; }
+  .reel-center-play { width:54px; height:54px; font-size:15px; }
+  .reel-controls { left:7px; right:7px; bottom:7px; min-height:38px; grid-template-columns:26px minmax(25px,1fr) 26px 26px; gap:5px; padding:0 7px; }
+  .reel-control-button { width:25px; height:25px; }
+}
 @media (max-width:700px) { .site-header { padding:17px; } nav { gap:13px; font-size:9px; }.hero { min-height:100svh; padding:76px 17px 17px; }.hero-top-bar { flex-direction:column; gap:6px; }.hero-bg { background-position:62% center; }.hero-meta { font-size:9px; }.hero-loc-indicator { font-size:9px; }.wordmark { width:min(92vw,400px); }.hero-bottom { flex-direction:column; align-items:flex-start; font-size:8px; line-height:1.5; gap:16px; }.hero-bottom p:first-child { max-width:220px; }.hero-bg-selector { align-items:flex-start; width:100%; }.bg-selector-pills { justify-content:flex-start; }.loc-pill { font-size:8px; padding:3px 7px; }.statement { min-height:55vh; padding:25px 17px; }.statement-inner { grid-template-columns:1fr; gap:28px; }.statement-copy { font-size:clamp(21px,6.4vw,29px); }.stills-section { min-height:70vh; }.stills-viewer { min-height:420px; }.contact { min-height:36vh; padding:25px 17px; }.contact-email { font-size:clamp(18px, 6vw, 32px); } footer { grid-template-columns:1fr 1fr; padding:17px; gap:20px; }.legal-page { padding:70px 17px 55px; }.legal-page h1 { margin:42px 0 65px; }.legal-copy { margin-left:0; } }

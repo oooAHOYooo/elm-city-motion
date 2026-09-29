@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Watch the commercial b-roll reel from Elm City Motion, a New Haven, Connecticut film and video production studio." />
+    <meta name="theme-color" content="#080808" />
+    <link rel="canonical" href="https://www.elmcitymotion.com/reel.html" />
+    <meta property="og:type" content="video.other" />
+    <meta property="og:site_name" content="Elm City Motion" />
+    <meta property="og:title" content="Commercial B-Roll Reel | Elm City Motion" />
+    <meta property="og:description" content="Commercial b-roll from Elm City Motion, a New Haven, Connecticut film production studio." />
+    <meta property="og:url" content="https://www.elmcitymotion.com/reel.html" />
+    <meta property="og:image" content="https://www.elmcitymotion.com/assets/ecm-commercial-reel-poster.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Commercial B-Roll Reel | New Haven Film Production | Elm City Motion</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": "Elm City Motion Commercial B-Roll Reel",
+        "description": "Commercial b-roll from Elm City Motion, a New Haven, Connecticut film and video production studio.",
+        "thumbnailUrl": "https://www.elmcitymotion.com/assets/ecm-commercial-reel-poster.jpg",
+        "uploadDate": "2026-09-17T12:44:54Z",
+        "contentUrl": "https://storage.googleapis.com/ag-photography/2026%20-%20AG%20REELS/AG%20-%20COMMERCIAL%20BROLL%20-%20ECM%20-%209-17-26.mp4",
+        "creator": { "@id": "https://www.elmcitymotion.com/#organization" },
+        "inLanguage": "en-US"
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="reel-page">
+    <main class="reel-screen" aria-label="Elm City Motion commercial b-roll">
+      <video class="reel-backdrop" autoplay muted loop playsinline aria-hidden="true" poster="assets/ecm-commercial-reel-poster.jpg">
+        <source src="assets/ecm-commercial-reel.mp4" type="video/mp4" />
+      </video>
+      <div class="reel-wash" aria-hidden="true"></div>
+      <header class="reel-header">
+        <a class="reel-back" href="index.html" aria-label="Back to Elm City Motion home"><span aria-hidden="true">←</span> BACK</a>
+        <a class="reel-watermark" href="index.html" aria-label="Elm City Motion">ECM<span>®</span></a>
+      </header>
+      <section class="reel-stage">
+        <div class="reel-heading"><span>ELM CITY MOTION</span><span>COMMERCIAL / B-ROLL / 2026</span></div>
+        <div class="reel-frame">
+          <video class="reel-feature" playsinline preload="metadata" poster="assets/ecm-commercial-reel-poster.jpg" aria-label="Elm City Motion commercial b-roll">
+            <source src="https://storage.googleapis.com/ag-photography/2026%20-%20AG%20REELS/AG%20-%20COMMERCIAL%20BROLL%20-%20ECM%20-%209-17-26.mp4" type="video/mp4" />
+            <!-- Add the selected soundtrack file here when supplied. -->
+          </video>
+          <button class="reel-center-play" type="button" aria-label="Play commercial b-roll"><span aria-hidden="true">▶</span></button>
+          <div class="reel-controls" aria-label="Video controls">
+            <button class="reel-control-button reel-toggle" type="button" aria-label="Play video"><span aria-hidden="true">▶</span></button>
+            <input class="reel-seek" type="range" min="0" max="1000" value="0" aria-label="Seek video" />
+            <button class="reel-control-button reel-mute" type="button" aria-label="Unmute video"><span aria-hidden="true">◖</span></button>
+            <button class="reel-control-button reel-fullscreen" type="button" aria-label="Enter fullscreen"><span aria-hidden="true">⛶</span></button>
+          </div>
+        </div>
+        <div class="reel-caption"><span>NEW HAVEN, CONNECTICUT</span><span>COMMERCIAL B-ROLL</span></div>
+      </section>
+      <footer class="reel-footer"><span>FILM + VIDEO PRODUCTION</span><a href="mailto:alex@ahoy.ooo">CONTACT ↗</a></footer>
+    </main>
+    <script>
+      const feature = document.querySelector('.reel-feature');
+      const frame = document.querySelector('.reel-frame');
+      const toggle = document.querySelector('.reel-toggle');
+      const centerPlay = document.querySelector('.reel-center-play');
+      const seek = document.querySelector('.reel-seek');
+      const mute = document.querySelector('.reel-mute');
+      const fullscreen = document.querySelector('.reel-fullscreen');
+      const setPlaying = (playing) => {
+        toggle.setAttribute('aria-label', playing ? 'Pause video' : 'Play video');
+        toggle.querySelector('span').textContent = playing ? 'Ⅱ' : '▶';
+        centerPlay.setAttribute('aria-label', playing ? 'Pause commercial b-roll' : 'Play commercial b-roll');
+        frame.classList.toggle('is-playing', playing);
+      };
+      const playPause = () => feature.paused ? feature.play().catch(() => {}) : feature.pause();
+      toggle.addEventListener('click', playPause);
+      centerPlay.addEventListener('click', playPause);
+      feature.addEventListener('click', playPause);
+      feature.addEventListener('timeupdate', () => {
+        const progress = feature.duration ? feature.currentTime / feature.duration * 100 : 0;
+        seek.value = String(Math.round(progress * 10));
+        seek.style.setProperty('--progress', `${progress}%`);
+      });
+      feature.addEventListener('play', () => setPlaying(true));
+      feature.addEventListener('pause', () => setPlaying(false));
+      feature.addEventListener('ended', () => setPlaying(false));
+      seek.addEventListener('input', () => {
+        if (feature.duration) {
+          const progress = Number(seek.value) / 10;
+          feature.currentTime = progress / 100 * feature.duration;
+          seek.style.setProperty('--progress', `${progress}%`);
+        }
+      });
+      mute.addEventListener('click', () => {
+        feature.muted = !feature.muted;
+        mute.setAttribute('aria-label', feature.muted ? 'Unmute video' : 'Mute video');
+        mute.querySelector('span').textContent = feature.muted ? '◖' : '◖))';
+      });
+      fullscreen.addEventListener('click', () => {
+        if (document.fullscreenElement) document.exitFullscreen?.();
+        else frame.requestFullscreen?.();
+      });
+      document.addEventListener('fullscreenchange', () => {
+        const isFullscreen = document.fullscreenElement === frame;
+        fullscreen.setAttribute('aria-label', isFullscreen ? 'Exit fullscreen' : 'Enter fullscreen');
+      });
+    </script>
+  </body>
+</html>
