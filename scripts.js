@@ -1,51 +1,84 @@
 (() => {
-  // Stills / Hero Background switcher logic
-  const stillsBgs = [...document.querySelectorAll('.stills-bg, .hero-bg')];
-  const stillsPills = [...document.querySelectorAll('.stills-pill, .loc-pill')];
-  const stillsLocIndicator = document.getElementById('stills-loc-indicator') || document.getElementById('hero-loc-tag');
-  let currentStillsIndex = 0;
-  let stillsTimer = null;
+  // Hero Video Rotation logic
+  const heroVideoLayers = [...document.querySelectorAll('.hero-video-layer')];
+  const heroPills = [...document.querySelectorAll('.hero-reel-pill, .loc-pill')];
+  const heroLocIndicator = document.getElementById('hero-loc-tag');
+  let currentHeroIndex = 0;
+  let heroTimer = null;
 
-  const setStillsBackground = (index) => {
-    if (!stillsBgs[index]) return;
-    stillsBgs.forEach((bg, i) => {
-      const vid = bg.querySelector('video');
+  const setHeroVideo = (index) => {
+    if (!heroVideoLayers[index]) return;
+    heroVideoLayers.forEach((layer, i) => {
+      const vid = layer.querySelector('video');
       if (i === index) {
-        bg.classList.add('is-active');
-        if (vid) vid.play().catch(() => {});
+        layer.classList.add('is-active');
+        if (vid) {
+          vid.currentTime = 0;
+          vid.play().catch(() => {});
+        }
       } else {
-        bg.classList.remove('is-active');
-        if (vid) vid.pause();
+        layer.classList.remove('is-active');
+        if (vid) {
+          setTimeout(() => {
+            if (!layer.classList.contains('is-active')) vid.pause();
+          }, 1200);
+        }
       }
     });
 
-    stillsPills.forEach((pill, i) => {
+    heroPills.forEach((pill, i) => {
       pill.classList.toggle('is-active', i === index);
     });
 
-    if (stillsLocIndicator && stillsBgs[index].dataset.label) {
-      stillsLocIndicator.style.opacity = '0';
+    if (heroLocIndicator && heroVideoLayers[index].dataset.label) {
+      heroLocIndicator.style.opacity = '0';
       setTimeout(() => {
-        stillsLocIndicator.textContent = 'LOC: ' + stillsBgs[index].dataset.label;
-        stillsLocIndicator.style.opacity = '1';
-      }, 200);
+        heroLocIndicator.textContent = heroVideoLayers[index].dataset.label;
+        heroLocIndicator.style.opacity = '1';
+      }, 250);
     }
-    currentStillsIndex = index;
+    currentHeroIndex = index;
   };
 
-  stillsPills.forEach((pill) => {
+  const autoRotateHero = () => {
+    if (heroVideoLayers.length <= 1) return;
+    const nextIdx = (currentHeroIndex + 1) % heroVideoLayers.length;
+    setHeroVideo(nextIdx);
+  };
+
+  heroVideoLayers.forEach((layer) => {
+    const vid = layer.querySelector('video');
+    if (vid) {
+      vid.addEventListener('ended', () => {
+        if (layer.classList.contains('is-active')) autoRotateHero();
+      });
+    }
+  });
+
+  if (heroVideoLayers.length > 1) {
+    heroTimer = setInterval(autoRotateHero, 22000);
+  }
+
+  heroPills.forEach((pill) => {
     pill.addEventListener('click', () => {
       const idx = parseInt(pill.dataset.index, 10);
-      setStillsBackground(idx);
-      clearInterval(stillsTimer);
-      stillsTimer = setInterval(autoRotateStills, 9000);
+      setHeroVideo(idx);
+      clearInterval(heroTimer);
+      heroTimer = setInterval(autoRotateHero, 22000);
     });
   });
 
+  // Stills gallery background rotation
+  const stillsBgs = [...document.querySelectorAll('.stills-bg')];
+  let currentStillsIndex = 0;
+  let stillsTimer = null;
+
   const autoRotateStills = () => {
     if (stillsBgs.length <= 1) return;
-    const nextIdx = (currentStillsIndex + 1) % stillsBgs.length;
-    setStillsBackground(nextIdx);
+    currentStillsIndex = (currentStillsIndex + 1) % stillsBgs.length;
+    stillsBgs.forEach((bg, i) => {
+      bg.classList.toggle('is-active', i === currentStillsIndex);
+    });
   };
 
   if (stillsBgs.length > 1) {

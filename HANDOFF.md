@@ -131,11 +131,19 @@ If you need to re-render, re-pace, or add/swap clips in `assets/ecm-commercial-r
   - **Statement Copy (`#about`)**: Updated the statement and meta description to the approved slogan: *"Film and video production for clients in New Haven and beyond."*
   - **Contact Section (`#contact`)**: Replaced the previous `Make Something` headline with a clean, confident `Contact` heading matching the editorial brutalist typography.
 
-### Phase 7: Full-Bleed Statement Background & Compact Centered Contact Section (Current State)
+### Phase 7: Full-Bleed Statement Background & Compact Centered Contact Section
 - **User Request:** *"this section here - could the background image go all the way - and could you for "contact" make that hiehght smaller and have alex@ahoy.ooo in the center?"*
 - **Implementation:**
   - **Statement Section (`#about`)**: Resolved the Safari/WebKit grid-cell clipping where the background image was constrained to the 1/3 column width. Wrapped content in `.statement-inner` with `display: flex` on `.statement`, allowing `.statement-bg` (`position: absolute; inset: 0`) to stretch 100% full-bleed edge-to-edge behind the entire statement copy.
   - **Contact Section (`#contact`)**: Reduced section height from `92vh` down to a compact, punchy `44vh` (36vh on mobile). Centered `alex@ahoy.ooo` directly in the section with `DM Mono` styling, active underline, and smooth hover state.
+
+### Phase 8: Hero Multi-Video Rotation & Selects Reel Integration (Current State)
+- **User Request:** *"could we add to the homepage a rotation of a new updated video - i want to add it into the mix without messing up the work you have already done ... here it is = https://storage.googleapis.com/ag-photography/2026%20-%20ECM%20-%20BUCKET/2026%20-%20TR%20-%20EXPORTS/Rough%20Cuts/SELECTS_COMPILE_1withMusic.mov - i want it in black and white too - open up elmcity motion so i can see"*
+- **Implementation:**
+  - **Video Transcoding:** Transcoded `SELECTS_COMPILE_1withMusic.mov` into `assets/ecm-selects-reel.mp4` (4.6 MB, H.264, 1920x804 anamorphic crop, 24fps) using the matching Elm City Motion black-and-white grading curve (`format=gray,eq=contrast=1.18:brightness=0.01,curves=all='0/0 0.18/0.08 0.5/0.48 0.85/0.92 1/1'`). Generated matching poster `assets/ecm-selects-reel-poster.jpg`.
+  - **Multi-Video Hero Layers:** Structured `.hero-image` with layered video elements (`.hero-video-layer`) crossfading seamlessly via CSS opacity transitions (1.2s cubic-bezier).
+  - **Rotation Mechanics:** Both reels (`01 Commercial` and `02 Selects`) auto-rotate every 22s or upon completion, update `#hero-loc-tag` (`Reel: Commercial B-Roll` / `Reel: Selects & Rough Cuts`), and can be manually switched via subtle selector pills in `.hero-bottom`.
+  - **Independent Still & Contact Rotations:** Isolated stills gallery and contact rotation logic in `scripts.js` to ensure zero interference between sections.
 
 ---
 

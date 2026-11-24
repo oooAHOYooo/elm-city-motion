@@ -61,9 +61,16 @@
     <main id="top">
       <section class="hero" aria-labelledby="site-title">
         <div class="hero-image" role="img" aria-label="Elm City Motion Showreel">
-          <video class="hero-video-element" autoplay muted loop playsinline poster="assets/ecm-commercial-reel-poster.jpg">
-            <source src="assets/ecm-commercial-reel.mp4" type="video/mp4" />
-          </video>
+          <div class="hero-video-layer is-active" data-label="Reel: Commercial B-Roll">
+            <video class="hero-video-element" autoplay muted loop playsinline poster="assets/ecm-commercial-reel-poster.jpg">
+              <source src="assets/ecm-commercial-reel.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="hero-video-layer" data-label="Reel: Selects &amp; Rough Cuts">
+            <video class="hero-video-element" muted loop playsinline preload="auto" poster="assets/ecm-selects-reel-poster.jpg">
+              <source src="assets/ecm-selects-reel.mp4" type="video/mp4" />
+            </video>
+          </div>
           <div class="hero-video-overlay"></div>
         </div>
         <div class="hero-top-bar">
@@ -73,6 +80,12 @@
         <h1 id="site-title" class="wordmark"><img src="assets/ecm-wordmark.svg" alt="Elm City Motion" /></h1>
         <div class="hero-bottom">
           <p>Commercial / Narrative / Documentary / Music / Camera</p>
+          <div class="hero-bg-selector" aria-label="Select reel">
+            <div class="bg-selector-pills">
+              <button type="button" class="loc-pill hero-reel-pill is-active" data-index="0">01 Commercial</button>
+              <button type="button" class="loc-pill hero-reel-pill" data-index="1">02 Selects</button>
+            </div>
+          </div>
           <p>ECM / 2026</p>
         </div>
       </section>
